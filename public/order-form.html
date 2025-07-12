@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Entry Form - Restaurant DB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Order Entry Form</h1>
+            <a href="/" class="btn btn-back">← Back to Home</a>
+        </header>
+        
+        <main>
+            <div class="form-container">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="orderNumber">Order Number</label>
+                        <input type="text" id="orderNumber" name="orderNumber" value="auto-generated" readonly>
+                        <small>System generated automatically</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orderDate">Order Date</label>
+                        <input type="date" id="orderDate" name="orderDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerName">Customer Name *</label>
+                        <input type="text" id="customerName" name="customerName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerPhone">Customer Phone</label>
+                        <input type="tel" id="customerPhone" name="customerPhone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerEmail">Customer Email</label>
+                        <input type="email" id="customerEmail" name="customerEmail">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerAddress">Customer Address *</label>
+                        <textarea id="customerAddress" name="customerAddress" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}">
+                    </div>
+                    
+                    <div class="items-section">
+                        <h3>Order Items</h3>
+                        <div id="orderItems">
+                            <div class="item-row">
+                                <div class="form-group">
+                                    <label for="itemName1">Item Name *</label>
+                                    <select id="itemName1" name="itemName1" required>
+                                        <option value="">Select Item</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="quantity1">Quantity *</label>
+                                    <input type="number" id="quantity1" name="quantity1" min="1" value="1" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="price1">Price (Rs.)</label>
+                                    <input type="number" id="price1" name="price1" step="0.01" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subtotal1">Subtotal (Rs.)</label>
+                                    <input type="number" id="subtotal1" name="subtotal1" step="0.01" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Add Another Item?</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="addAnotherItem" value="yes">
+                                    Yes
+                                </label>
+                                <label>
+                                    <input type="radio" name="addAnotherItem" value="no" checked>
+                                    No
+                                </label>
+                            </div>
+                            <button type="button" id="addItemBtn" class="btn btn-secondary">Add Item</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryPerson">Delivery Person</label>
+                        <select id="deliveryPerson" name="deliveryPerson">
+                            <option value="">Select Delivery Person</option>
+                        </select>
+                    </div>
+                    
+                    <div class="total-section">
+                        <div class="form-group">
+                            <label for="totalAmount">Total Amount (Rs.)</label>
+                            <input type="number" id="totalAmount" name="totalAmount" step="0.01" readonly>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Order</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script src="order-form.js"></script>
+</body>
+</html>
