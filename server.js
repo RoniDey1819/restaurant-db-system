@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'password', // Change this to your MySQL password
+    password: '', // Change this to your MySQL password
     database: 'restaurant_db'
 });
 
