@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reports - Restaurant DB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Reports Dashboard</h1>
+      <a href="/" class="btn btn-back">← Back to Home</a>
+    </header>
+
+    <main>
+      <div class="form-container">
+        <h3>1. Orders Per Pincode</h3>
+        <button id="loadPincodeReport" class="btn btn-primary">Load Pincode Report</button>
+        <div id="chart"></div>
+        <div id="pincodeOrders" class="items-list"></div>
+      </div>
+
+      <div class="form-container">
+        <h3>2. Orders by Date Range</h3>
+        <form id="dateRangeForm" class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" name="startDate" required>
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" name="endDate" required>
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Generate Report</button>
+        </form>
+        <div id="dateRangeOrders" class="items-list"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="reports.js"></script>
+</body>
+</html>
