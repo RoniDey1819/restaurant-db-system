@@ -115,7 +115,8 @@ app.post('/api/order', (req, res) => {
 
             const customerId = customerResult.insertId;
             const addressQuery = 'INSERT INTO Customer_Address (Customer_ID, street_address, city, state, zip_code, is_default) VALUES (?, ?, ?, ?, ?, TRUE)';
-            db.query(addressQuery, [customerId, customer_address, 'City', 'State', '000000'], (err) => {
+            const zip_code = req.body.pincode || '000000'; // fallback if empty
+            db.query(addressQuery, [customerId, customer_address, 'City', 'State', zip_code], (err) => {
                 if (err) return db.rollback(() => res.status(500).json({ error: 'Address error' }));
 
                 let total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);

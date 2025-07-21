@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             customer_phone: formData.get('customerPhone'),
             customer_email: formData.get('customerEmail'),
             customer_address: formData.get('customerAddress'),
+            pincode: formData.get('pincode'),
             delivery_staff_id: formData.get('deliveryPerson') || null,
             items: []
         };
